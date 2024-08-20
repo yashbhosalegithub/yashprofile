@@ -1,0 +1,102 @@
+.design-portfolio-container {
+    height: 100vh;
+    padding: 100px 20px 20px;
+    background: linear-gradient(135deg, #2E2E2E 0%, #7A7A7A 100%);
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.design-portfolio-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(315deg, #440370 4%, #d6d0eb 74%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.design-portfolio-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the min width of the grid items */
+    grid-gap: 20px; /* Consistent spacing */
+    flex-grow: 1;
+    padding: 0 10px;
+    overflow-y: auto;
+}
+
+.design-portfolio-project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Ensures the container is square */
+}
+
+.design-portfolio-image, .design-portfolio-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.design-portfolio-project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.design-portfolio-project-item:hover .design-portfolio-project-overlay {
+    opacity: 1;
+}
+
+.design-portfolio-project-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+}
+
+.design-portfolio-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    line-height: 140%;
+    margin-bottom: 5%;
+}
+
+@media (max-width: 1200px) {
+    .design-portfolio-collage {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the min width for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .design-portfolio-collage {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust the min width for smaller screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .design-portfolio-collage {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust the min width for very small screens */
+    }
+
+    .design-portfolio-project-title {
+        font-size: 1.2rem;
+    }
+}
